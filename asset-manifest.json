@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/portafolio/static/css/main.f42a813f.css",
+    "main.js": "/portafolio/static/js/main.bde2cd0f.js",
+    "static/js/787.8d63133b.chunk.js": "/portafolio/static/js/787.8d63133b.chunk.js",
+    "static/media/cocktails.png": "/portafolio/static/media/cocktails.89f5777667973765a811.png",
+    "static/media/img-browser.png": "/portafolio/static/media/img-browser.906b46d3ab7bc0ca94da.png",
+    "static/media/breakingbad.png": "/portafolio/static/media/breakingbad.9cde37b761814d9d9dd0.png",
+    "static/media/CV_AdanRodriguez_compressed.pdf": "/portafolio/static/media/CV_AdanRodriguez_compressed.3089349357ce3bc02ea5.pdf",
+    "static/media/insurance.png": "/portafolio/static/media/insurance.2ad7006a4117e308477a.png",
+    "static/media/Crypto.png": "/portafolio/static/media/Crypto.75a48d3a290880c7e953.png",
+    "static/media/code.webp": "/portafolio/static/media/code.ff4fc8ad599b9f04fd32.webp",
+    "static/media/coding-icon.jpg": "/portafolio/static/media/coding-icon.c71c59ba5f57b6e42551.jpg",
+    "static/media/back.svg": "/portafolio/static/media/back.1810e397c841cf2cc7de5971e05766c0.svg",
+    "index.html": "/portafolio/index.html",
+    "main.f42a813f.css.map": "/portafolio/static/css/main.f42a813f.css.map",
+    "main.bde2cd0f.js.map": "/portafolio/static/js/main.bde2cd0f.js.map",
+    "787.8d63133b.chunk.js.map": "/portafolio/static/js/787.8d63133b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f42a813f.css",
+    "static/js/main.bde2cd0f.js"
+  ]
+}
