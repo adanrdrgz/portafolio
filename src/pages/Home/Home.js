@@ -1,5 +1,5 @@
-import React from "react";
-import { Image, Text, Flex, HStack, Card, CardHeader, CardBody, List, ListItem } from "@chakra-ui/react";
+import React, { useState, useEffect } from "react";
+import { Image, Text, Flex, HStack, VStack, Card, CardHeader, CardBody, List, ListItem } from "@chakra-ui/react";
 import introImg from "./img/code.webp"
 import frontImg from "./img/coding-icon.jpg"
 import backImg from "./img/back.svg"
@@ -8,7 +8,24 @@ import { TbBrandCss3 } from "react-icons/tb"
 import { GiDatabase } from "react-icons/gi"
 import { SiJavascript, SiTypescript, SiAngular, SiReact, SiPython, SiKotlin, SiSpringboot } from "react-icons/si"
 import "./Home.css"
+import { projectService } from '../../services/projectService';
+import { Link } from 'react-router-dom';
+
+
 const Home = () => {
+
+    const [projects, setProjects] = useState([])
+
+    const getProjects = () => {
+        const pr = projectService.getProjects()
+        setProjects(pr)
+        
+    }
+
+    useEffect(() => {
+        getProjects()
+    }, [])
+
     return (
         <Flex w={"100%"} direction="column" alignContent={"center"} gap={3}>
             <Flex direction={"column"} justifyContent={"center"} w={"100%"} bg={"#A0DAFF"}>
@@ -18,9 +35,9 @@ const Home = () => {
                 <Image mt={0} src={introImg} w={"100%"} maxH={"700px"} alt="Introduction"/>
             </Flex>
 
-            <Text color={"#EEEEEE"} fontSize="4xl" mx={"auto"}>Mis Aptitudes</Text>
+            <Text color={"#EEEEEE"} borderBottom={"1px"} borderColor={"#555555"} fontSize="4xl" mx={"auto"}>Mis Aptitudes</Text>
 
-            <HStack gap={3} mt={5} justifyContent="center" flexWrap={"wrap"} alignContent={"stretch"}>
+            <HStack gap={3} my={5} justifyContent="center" flexWrap={"wrap"} alignContent={"stretch"}>
                 <Card bg={"#333333"} px={10} >
                     <CardHeader color={"#EEEEEE"} borderBottom="1px" borderColor={"#555555"}>
                             <Image src={frontImg} maxW={"40px"}  mx={"auto"} />
@@ -55,6 +72,33 @@ const Home = () => {
                     </CardBody>
                 </Card>
             </HStack>
+
+
+            <VStack py={10} bg={"#333333"} gap={3} my={5} justifyContent="center" flexWrap={"wrap"}>
+            
+                <Text color={"#EEEEEE"} borderBottom={"1px"} borderColor={"#555555"} fontSize="4xl" mx={"auto"}>Mis Proyectos</Text>
+                <HStack  px={10} justifyContent={"center"} alignContent={"stretch"} flexWrap={"wrap"} gap={3}>
+
+                    {projects.map((project) => {
+                        return (
+                        <Link to={project.url}>
+                            <Card key={project.id} className="project-card" bg={"#111111"} maxW={"300px"} >
+                                <CardHeader color={"#EEEEEE"} borderBottom="1px" borderColor={"#555555"}>
+                                    <Image src={project.image} maxW={"200px"}  mx={"auto"} />
+                                    <Text p={2} fontSize={"2xl"}> {project.title} </Text>    
+                                </CardHeader>
+
+                                <CardBody>
+                                    <Text color={"#EEEEEE"} fontSize={"lg"}>{project.description}</Text>
+                                </CardBody>
+                            </Card>
+                        </Link>
+                        )
+                    })}
+                
+                </HStack>
+            </VStack>
+
         </Flex>
     )
 }

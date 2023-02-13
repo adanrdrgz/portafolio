@@ -1,18 +1,12 @@
-import { HStack, Box, Text, List } from "@chakra-ui/react";
+import { HStack, Box, Text } from "@chakra-ui/react";
 import React from "react";
-import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
-        <HStack justifySelf={"flex-start"} w={"100%"} justifyContent={"space-between"}>
+        <HStack w={"100%"} justifyContent={"center"}>
             <Box p={3}>
                 <Text fontSize={"3xl"}>Mi Portafolio</Text>
             </Box>
-
-            <HStack fontSize={"md"} p={3} justifyContent="space-around">
-                <Text>Mis Proyectos</Text>
-                <Text>Mi CV</Text>
-            </HStack>
         </HStack>
     )
 }
